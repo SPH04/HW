@@ -6,6 +6,8 @@ public class Alarm : MonoBehaviour
 {
     [SerializeField] private float _fadingSpeed;
 
+    private Coroutine _fadeInCoroutine;
+    private Coroutine _fadeOutCoroutine;
     private AudioSource _audioSource;
 
     private void Start()
@@ -13,16 +15,25 @@ public class Alarm : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
         _audioSource.volume = 0;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D _)
     {
-        StopAllCoroutines();
-        StartCoroutine(FadeIn());
+        if (_fadeInCoroutine != null)
+            StopCoroutine(_fadeInCoroutine);
+        if (_fadeOutCoroutine != null)
+            StopCoroutine(_fadeOutCoroutine);
+
+        _fadeInCoroutine = StartCoroutine(FadeIn());
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D _)
     {
-        StopAllCoroutines();
-        StartCoroutine(FadeOut());
+        if (_fadeInCoroutine != null)
+            StopCoroutine(_fadeInCoroutine);
+        if (_fadeOutCoroutine != null)
+            StopCoroutine(_fadeOutCoroutine);
+
+        _fadeOutCoroutine = StartCoroutine(FadeOut());
     }
+
     private IEnumerator FadeIn()
     {
         if (!_audioSource.isPlaying)

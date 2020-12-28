@@ -205,7 +205,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 6a2f8bf246c13c54ebdce6d504797d23, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -575,6 +575,7 @@ GameObject:
   - component: {fileID: 1993217395}
   - component: {fileID: 1993217400}
   - component: {fileID: 1993217399}
+  - component: {fileID: 1993217401}
   m_Layer: 0
   m_Name: Robber
   m_TagString: Untagged
@@ -657,7 +658,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 8093586721818623717, guid: 308a86eaf3c66764d8e255a4ab7cb5b5,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -678,7 +679,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993217394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.79, y: -2.29, z: 0}
+  m_LocalPosition: {x: -8.85, y: -2.17, z: 0}
   m_LocalScale: {x: 8.96788, y: 8.96788, z: 8.96788}
   m_Children: []
   m_Father: {fileID: 0}
@@ -696,7 +697,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ebb524fc39d05d49ac4086d6fedc757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
 --- !u!95 &1993217400
 Animator:
   serializedVersion: 3
@@ -716,3 +716,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1993217401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993217394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab2b224edebd154da9dd406825da0fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 4
